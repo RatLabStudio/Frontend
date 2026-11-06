@@ -1,0 +1,122 @@
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Poppins";
+  src: url("assets/fonts/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+html,
+body {
+  background-color: #1e1e1e;
+  font-family: Poppins, sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+.header {
+    background-color: #2C3032;
+    width: 100%;
+    height: 160px;
+    margin: 0;
+    color: white;
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 2vh;
+    text-align: center;
+    z-index: 10;
+    position: absolute;
+}
+
+.headerContent {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 75%;
+    margin: auto;
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.header img {
+    width: 295px;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.headerLinks {
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    width: 100%;
+    gap: 1vh;
+    margin: auto;
+}
+
+a {
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+}
+
+.section {
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    z-index: 0;
+}
+
+.imageBackdrop {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    display: flex;
+    background-image: url(assets/media/endianTitleBackground.webp);
+    background-size: cover;
+    filter: blur(8px);
+}
+
+.sectionContent {
+    position: relative;
+    top: -70vh;
+    z-index: 1;
+}
+
+.title {
+    font-family: Poppins, sans-serif;
+    font-weight: 600;
+    font-size: 8vh;
+    text-shadow: 6px 6px 4px black;
+    color: white;
+    text-align: center;
+    line-height: 12vh;
+    margin-bottom: 0;
+}
+
+.subtitle {
+    font-family: Poppins, sans-serif;
+    font-weight: 300;
+    font-size: 2vh;
+    color: white;
+    text-align: center;
+}
