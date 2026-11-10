@@ -70,7 +70,7 @@ body {
 
 .headerLinks {
   display: grid;
-  grid-template-columns: auto auto auto auto;
+  grid-template-columns: auto auto;
   width: 100%;
   gap: 1vh;
   margin: auto;
@@ -211,6 +211,201 @@ button:hover {
     filter: brightness(110%);
 }
 
+.tileTitle {
+    font-weight: 600;
+    color: #3de8b9;
+    margin-bottom: 0;
+}
+
+.tileDescription {
+    margin: 0;
+    margin-top: 0.5vh;
+    font-size: 1.5vh;
+}
+
 .footer {
   font-size: 1.5vh;
+}
+
+/* Moved out of inline styles in index.html (identical values) so the
+   responsive rules below can override them. */
+button.buttonSmall {
+  border-color: #3de8b9;
+  font-weight: 400;
+  font-size: 1.5vh;
+  padding: 1vh 2vh 1vh 2vh;
+  border-radius: 1.5vh;
+}
+
+.columnIcon {
+  width: 22vh;
+  margin: auto;
+}
+
+/* ------------------------------------------------------------------
+   Responsive styles (desktop layout above is unchanged)
+   ------------------------------------------------------------------ */
+
+/* Tablets and small laptop windows */
+@media (max-width: 1024px) {
+  .twoColumn {
+    width: 80%;
+  }
+
+  .carousel {
+    width: 70%;
+  }
+}
+
+/* Phones and small tablets */
+@media (max-width: 768px) {
+  /* Header and footer: stack logo and links instead of side by side */
+  .header {
+    height: auto;
+    padding: 16px 0;
+    font-size: 16px;
+  }
+
+  .footer {
+    position: relative;
+    height: auto;
+    padding: 28px 0;
+    font-size: 16px;
+  }
+
+  .headerContent {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    width: 90%;
+    top: 0;
+    transform: none;
+  }
+
+  .header img,
+  .footer img {
+    width: min(220px, 70vw);
+    margin-top: 0;
+  }
+
+  .headerLinks {
+    grid-template-columns: repeat(3, auto);
+    justify-content: center;
+    gap: 8px 20px;
+  }
+
+  /* Larger tap targets for nav links */
+  .headerLinks a {
+    padding: 8px 4px;
+  }
+
+  .footer p {
+    font-size: 15px;
+    margin: 0;
+  }
+
+  .footer p a {
+    overflow-wrap: anywhere;
+  }
+
+  /* Hero: let content set its own position rather than using vh offsets */
+  .imageSection {
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    min-height: 100svh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: 170px 20px 60px;
+    overflow: hidden;
+  }
+
+  .imageBackdrop {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+  }
+
+  .sectionContent {
+    top: 0;
+    width: 100%;
+  }
+
+  h1,
+  .title {
+    font-size: clamp(2rem, 9vw, 4rem);
+    line-height: 1.25;
+    text-shadow: 3px 3px 3px black;
+  }
+
+  h2 {
+    font-size: clamp(1.75rem, 7vw, 2.5rem);
+  }
+
+  p {
+    font-size: 17px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  button {
+    font-size: 20px;
+    padding: 10px 24px;
+    border-radius: 10px;
+  }
+
+  button.buttonSmall {
+    font-size: 16px;
+    padding: 8px 18px;
+    border-radius: 10px;
+  }
+
+  .spacer {
+    height: 32px;
+  }
+
+  /* About section: single column */
+  .twoColumn {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    width: 88%;
+  }
+
+  .columnIcon {
+    width: 140px;
+  }
+
+  /* Projects: horizontal swipe carousel */
+  .lightSection h2,
+  .lightSection > .subtitle {
+    padding: 0 20px;
+  }
+
+  .carousel {
+    display: flex;
+    gap: 0;
+    width: 100%;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 7.5%;
+    box-sizing: border-box;
+    scroll-padding: 0 7.5%;
+  }
+
+  .tile {
+    flex: 0 0 70%;
+    max-width: 320px;
+    padding: 12px;
+    box-sizing: border-box;
+    scroll-snap-align: center;
+  }
+
+  .tileImg {
+    border-radius: 16px;
+  }
 }
